@@ -4,9 +4,10 @@ class Halo::Adapter < Carbon::Adapter
     @credentials : Credentials?,
     @port = 587,
     domain = nil,
-    @tls = true
+    @tls = false
   )
     @domain = domain.presence || @host
+    @tls = @credentials ? true : tls
   end
 
   def self.new(
@@ -14,11 +15,10 @@ class Halo::Adapter < Carbon::Adapter
     username : String,
     password : String,
     port = 587,
-    domain = nil,
-    tls = true
+    domain = nil
   )
     credentials = {password: password, username: username}
-    new(host, credentials, port, domain, tls)
+    new(host, credentials, port, domain)
   end
 
   def deliver_now(email : Carbon::Email)

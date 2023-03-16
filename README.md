@@ -29,7 +29,6 @@ BaseEmail.configure do |settings|
   settings.adapter = Halo::Adapter.new(
     host: "smtp.domain.tld",
     port: 587,
-    tls: true,
     username: "user@domain.tld",
     password: "a1b2c3",
     domain: "domain.tld" # HELO domain
@@ -40,7 +39,7 @@ end
 You may instantiate `Halo::Adapter` without authentication credentials:
 
 ```crystal
-Halo::Adapter.new(host: "localhost", port: 25, tls: false, credentials: nil)
+Halo::Adapter.new(host: "localhost", port: 25, credentials: nil)
 ```
 
 That's it! Send emails as usual. Check out *Carbon*'s [documentation](https://luckyframework.org/guides/emails/sending-emails-with-carbon) for details.
