@@ -1,8 +1,8 @@
 class Halo::Adapter < Carbon::Adapter
   def initialize(
     @host : String,
-    @credentials : Credentials?,
     @port = 587,
+    @credentials : Credentials? = nil,
     domain = nil,
     @tls = false
   )
@@ -11,14 +11,14 @@ class Halo::Adapter < Carbon::Adapter
   end
 
   def self.new(
-    host,
     username : String,
     password : String,
+    host,
     port = 587,
     domain = nil
   )
     credentials = {password: password, username: username}
-    new(host, credentials, port, domain)
+    new(host, port, credentials, domain)
   end
 
   def deliver_now(email : Carbon::Email)
