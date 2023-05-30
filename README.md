@@ -51,4 +51,3 @@ Run tests with `crystal spec -p`.
 1. Commit your changes: `git commit`
 1. Push to the branch: `git push origin my-new-feature`
 1. Submit a new *Pull Request* against the `GrottoPress:master` branch.
-
