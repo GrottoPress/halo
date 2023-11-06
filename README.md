@@ -4,12 +4,14 @@
 
 ## Installation
 
-1. Add the dependency to your `shard.yml`:
+1. Add the dependencies to your `shard.yml`:
 
    ```yaml
    dependencies:
      halo:
        github: GrottoPress/halo
+     carbon:
+       github: luckyframework/carbon
    ```
 
 2. Run `shards install`

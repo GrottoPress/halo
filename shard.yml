@@ -11,9 +11,6 @@ license: MIT
 crystal: ~> 1.4
 
 dependencies:
-  carbon:
-    github: luckyframework/carbon
-    version: ~> 0.3.0
   email:
     github: arcage/crystal-email
     version: ~> 0.7.0
@@ -22,6 +19,9 @@ development_dependencies:
   ameba:
     github: crystal-ameba/ameba
     version: ~> 1.0.0
+  carbon:
+    github: luckyframework/carbon
+    version: ~> 0.3.0
   devmail:
     github: tijn/devmail
     commit: 8f6b6a2f6199ef856e037ff9ef70c7971296c62b
