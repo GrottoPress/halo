@@ -21,7 +21,7 @@ development_dependencies:
     version: ~> 1.0.0
   carbon:
     github: luckyframework/carbon
-    version: ~> 0.3.0
+    version: ~> 0.4.0
   devmail:
     github: tijn/devmail
     commit: 8f6b6a2f6199ef856e037ff9ef70c7971296c62b

@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased] - 
 
+### Added
+- Add support for Carbon v0.4
+
 ### Changed
 - Remove the explicit dependency on [Carbon](https://github.com/luckyframework/carbon)
 
