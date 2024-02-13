@@ -12,6 +12,7 @@
        github: GrottoPress/halo
      carbon:
        github: luckyframework/carbon
+       version: ~> 0.5.0
    ```
 
 2. Run `shards install`

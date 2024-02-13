@@ -45,6 +45,19 @@ class Halo::Adapter < Carbon::Adapter
         end
       end
 
+      email.attachments.each do |attachment|
+        case attachment
+        in Carbon::AttachFile
+          attach **attach_file_args(attachment)
+        in Carbon::AttachIO
+          attach **attach_io_args(attachment)
+        in Carbon::ResourceFile
+          message_resource **resource_file_args(attachment)
+        in Carbon::ResourceIO
+          message_resource **resource_io_args(attachment)
+        end
+      end
+
       if text = email.text_body
         message(text)
       end
@@ -78,5 +91,39 @@ class Halo::Adapter < Carbon::Adapter
         OpenSSL::SSL::Options::NO_TLS_V1_1
       )
     end
+  end
+
+  private def attach_file_args(attachment)
+    {
+      file_path: attachment[:file_path],
+      file_name: attachment[:file_name],
+      mime_type: attachment[:mime_type]
+    }
+  end
+
+  private def attach_io_args(attachment)
+    {
+      io: attachment[:io],
+      file_name: attachment[:file_name],
+      mime_type: attachment[:mime_type]
+    }
+  end
+
+  private def resource_file_args(attachment)
+    {
+      file_path: attachment[:file_path],
+      cid: attachment[:cid],
+      file_name: attachment[:file_name],
+      mime_type: attachment[:mime_type]
+    }
+  end
+
+  private def resource_io_args(attachment)
+    {
+      io: attachment[:io],
+      cid: attachment[:cid],
+      file_name: attachment[:file_name],
+      mime_type: attachment[:mime_type]
+    }
   end
 end
