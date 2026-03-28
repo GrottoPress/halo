@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Replace deprecated `OpenSSL::SSL::Context::Client#set_modern_ciphers` call with `#security_level=`
 
+### Changed
+- Lower minimun supported TLS to v1.1
+
 ## [0.3.1] - 2025-10-02
 
 ### Fixed

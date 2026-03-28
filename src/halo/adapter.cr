@@ -87,8 +87,7 @@ class Halo::Adapter < Carbon::Adapter
       config.tls_context.add_options(
         OpenSSL::SSL::Options::NO_SSL_V2 |
         OpenSSL::SSL::Options::NO_SSL_V3 |
-        OpenSSL::SSL::Options::NO_TLS_V1 |
-        OpenSSL::SSL::Options::NO_TLS_V1_1
+        OpenSSL::SSL::Options::NO_TLS_V1
       )
     end
   end
