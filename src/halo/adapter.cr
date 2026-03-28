@@ -82,7 +82,7 @@ class Halo::Adapter < Carbon::Adapter
         config.use_auth(credentials[:username], credentials[:password])
       end
 
-      config.tls_context.set_modern_ciphers
+      config.tls_context.security_level = 2
 
       config.tls_context.add_options(
         OpenSSL::SSL::Options::NO_SSL_V2 |
